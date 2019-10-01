@@ -1,0 +1,128 @@
+#!/usr/bin/env bash
+counter=0
+my_array=("Fix security vulnerability in authentication"
+                            "Update API documentation for version 2.0"
+                            "Merge pull request #456: Performance optimizations"
+                            "Add support for two-factor authentication"
+                            "Refactor code for better maintainability"
+                            "Implement new admin dashboard"
+                            "Release version 3.0.0"
+                            "Update dependencies to latest versions"
+                            "Resolve conflicts in feature branch"
+                            "Add comprehensive test coverage"
+                            "Improve error handling in API"
+                            "Optimize database queries for scalability"
+                            "Standardize code formatting"
+                            "Remove deprecated features"
+                            "Enhance user interface for mobile devices"
+                            "Fix compatibility issues with Internet Explorer"
+                            "Implement user feedback system"
+                            "Add support for password reset"
+                            "Optimize front-end performance"
+                            "Fix memory leak in backend service"
+                            "Implement localization for multiple languages"
+                            "Enhance API documentation"
+                            "Implement automated code deployment"
+                            "Integrate continuous integration pipeline"
+                            "Add user roles and permissions system"
+                            "Optimize search functionality with Elasticsearch"
+                            "Implement third-party login providers"
+                            "Enhance error reporting and logging"
+                            "Implement single sign-on (SSO) authentication"
+"Fix issue with user authentication"
+                           "Add new feature: user profile page"
+                           "Update documentation for API endpoints"
+                           "Merge pull request #123: Bug fixes"
+                           "Implement security enhancements"
+                           "Refactor code for better performance"
+                           "Address code review comments"
+                           "Release version 2.0.0"
+                           "Update dependencies"
+                           "Resolve merge conflict"
+                           "Test suite improvements"
+                           "Add error handling to API"
+                           "Optimize database queries"
+                           "Code style formatting changes"
+                           "Remove deprecated functions"
+                           "Improve user interface"
+                           "Fix cross-browser compatibility issues"
+                           "Enhance error logging in the backend"
+                           "Implement responsive design for mobile"
+                           "Add unit tests for new features"
+                           "Upgrade to the latest framework version"
+                           "Update third-party libraries"
+                           "Create user onboarding tutorial"
+                           "Refactor database schema for scalability"
+                           "Fix broken links in documentation"
+                           "Add user feedback feature"
+                           "Implement password reset functionality"
+                           "Optimize front-end asset loading"
+                           "Fix memory leak in backend service"
+                           "Add localization support for multiple languages"
+                           "Enhance user authentication with two-factor authentication"
+                           "Integrate continuous integration and deployment (CI/CD) pipeline"
+                           "Implement user roles and permissions"
+                           "Improve search functionality with Elasticsearch"
+                           "Add support for third-party login providers"
+                           "Enhance error reporting and logging"
+                           "Implement single sign-on (SSO) authentication"
+                           "Optimize database indexing for faster queries"
+                           "themes optimizations for base analyser"
+                           "include adaptive mode for ic launcher"
+                           "dimension specification on wider assets"
+                           "update build file with latest android version"
+                           "handle midmap for larger device group")
+random_hour_element=1
+mn=$[ $RANDOM % 60 + 10 ]
+sc=$[ $RANDOM % 60 + 10 ]
+
+# Get the length of the array
+array_length=${#my_array[@]}
+
+# Define an array of integers
+hour_array=(200 24 120 90 300)
+
+# Get the length of the array
+hour_array_length=${#hour_array[@]}
+
+
+while [ $counter -le 20 ]
+ do
+      commit_counter=0
+      commit_count_array=(0 10 1 3 10 1 0 1 2 4)
+      commit_count_array_length=${#commit_count_array[@]}
+      commit_count_index=$((RANDOM % commit_count_array_length))
+      commit_count="${commit_count_array[commit_count_index]}"
+
+      while [ $commit_counter -le $commit_count ]
+       do
+          # Generate a random index within the range of the array length
+           random_index=$((RANDOM % array_length))
+          # Get the element at the random index
+          random_element="${my_array[random_index]}"
+
+           dateUsed=$(gdate -d "2019-10-01 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           echo $dateUsed > logger.md
+           git add .
+           git commit -m "$random_element"
+
+           LC_ALL=C GIT_COMMITTER_DATE="$dateUsed" git commit --amend --no-edit --date "$dateUsed"
+
+           mn=$(($[ $RANDOM % 60 + 10 ]))
+           sc=$(($[ $RANDOM % 60 + 10 ]))
+
+           commit_counter=$(($commit_counter + 1))
+       done
+
+  git push origin main -f
+
+  counter=$(($counter + 1))
+
+  # Generate a random index within the range of the array length
+
+  random_hour_index=$((RANDOM % hour_array_length))
+  # Get the element at the random index
+  new_random_hour_element="${hour_array[random_hour_index]}"
+  random_hour_element=$(($random_hour_element + $new_random_hour_element))
+
+done
