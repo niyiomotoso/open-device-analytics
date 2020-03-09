@@ -101,8 +101,8 @@ while [ $counter -le 20 ]
           # Get the element at the random index
           random_element="${my_array[random_index]}"
 
-           dateUsed=$(gdate -d "2019-10-20 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
-           echo $dateUsed > logger.md
+           dateUsed=$(gdate -d "2020-03-09 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           echo $dateUsed > file_server.md
            git add .
            git commit -m "$random_element"
 
