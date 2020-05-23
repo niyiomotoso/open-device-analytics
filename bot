@@ -55,7 +55,7 @@ hour_array=(700 540 200 900 400)
 hour_array_length=${#hour_array[@]}
 
 
-while [ $counter -le 0 ]
+while [ $counter -le 7 ]
  do
       commit_counter=0
       commit_count_array=(0 2 0 3 0 1 0 1 2 4)
@@ -116,7 +116,7 @@ while [ $counter -le 0 ]
            commit_counter=$(($commit_counter + 1))
        done
 
-  #git push origin main -f
+  git push origin main -f
 
   counter=$(($counter + 1))
 
