@@ -1,75 +1,44 @@
 #!/usr/bin/env bash
 counter=0
 my_array=("Fix security vulnerability in authentication"
-                            "Update API documentation for version 2.0"
-                            "Merge pull request #456: Performance optimizations"
-                            "Add support for two-factor authentication"
+           "Merge pull request #456: Performance optimizations"
                             "Refactor code for better maintainability"
-                            "Implement new admin dashboard"
-                            "Release version 3.0.0"
+                            "Implement new screens"
+                            "use kotlin 1.5.0"
                             "Update dependencies to latest versions"
                             "Resolve conflicts in feature branch"
                             "Add comprehensive test coverage"
-                            "Improve error handling in API"
-                            "Optimize database queries for scalability"
+                            "Optimize sqlite queries"
                             "Standardize code formatting"
                             "Remove deprecated features"
+                            "include adaptive mode for ic launcher"
+                            "dimension specification on wider assets"
                             "Enhance user interface for mobile devices"
-                            "Fix compatibility issues with Internet Explorer"
-                            "Implement user feedback system"
-                            "Add support for password reset"
-                            "Optimize front-end performance"
-                            "Fix memory leak in backend service"
+                            "Optimize UI performance"
+                            "Fix memory leak in android"
                             "Implement localization for multiple languages"
-                            "Enhance API documentation"
-                            "Implement automated code deployment"
-                            "Integrate continuous integration pipeline"
-                            "Add user roles and permissions system"
-                            "Optimize search functionality with Elasticsearch"
-                            "Implement third-party login providers"
+                            "Enhance documentation"
                             "Enhance error reporting and logging"
-                            "Implement single sign-on (SSO) authentication"
-"Fix issue with user authentication"
-                           "Add new feature: user profile page"
-                           "Update documentation for API endpoints"
                            "Merge pull request #123: Bug fixes"
                            "Implement security enhancements"
                            "Refactor code for better performance"
                            "Address code review comments"
-                           "Release version 2.0.0"
+                           "use kotlin/loader 2.0.0"
                            "Update dependencies"
                            "Resolve merge conflict"
                            "Test suite improvements"
-                           "Add error handling to API"
-                           "Optimize database queries"
                            "Code style formatting changes"
                            "Remove deprecated functions"
                            "Improve user interface"
-                           "Fix cross-browser compatibility issues"
-                           "Enhance error logging in the backend"
                            "Implement responsive design for mobile"
                            "Add unit tests for new features"
                            "Upgrade to the latest framework version"
-                           "Update third-party libraries"
-                           "Create user onboarding tutorial"
-                           "Refactor database schema for scalability"
+                           "Update old kotlin third-party libraries"
                            "Fix broken links in documentation"
-                           "Add user feedback feature"
-                           "Implement password reset functionality"
-                           "Optimize front-end asset loading"
-                           "Fix memory leak in backend service"
+                           "Add some user feedback feature"
                            "Add localization support for multiple languages"
-                           "Enhance user authentication with two-factor authentication"
-                           "Integrate continuous integration and deployment (CI/CD) pipeline"
-                           "Implement user roles and permissions"
-                           "Improve search functionality with Elasticsearch"
-                           "Add support for third-party login providers"
                            "Enhance error reporting and logging"
-                           "Implement single sign-on (SSO) authentication"
-                           "Optimize database indexing for faster queries"
                            "themes optimizations for base analyser"
-                           "include adaptive mode for ic launcher"
-                           "dimension specification on wider assets"
                            "update build file with latest android version"
                            "handle midmap for larger device group")
 random_hour_element=1
@@ -80,20 +49,20 @@ sc=$[ $RANDOM % 60 + 10 ]
 array_length=${#my_array[@]}
 
 # Define an array of integers
-hour_array=(500 240 400 900 300)
+hour_array=(700 540 200 900 400)
 
 # Get the length of the array
 hour_array_length=${#hour_array[@]}
 
 
-while [ $counter -le 10 ]
+while [ $counter -le 0 ]
  do
       commit_counter=0
-      commit_count_array=(0 2 5 3 0 1 0 1 2 4)
+      commit_count_array=(0 2 0 3 0 1 0 1 2 4)
       commit_count_array_length=${#commit_count_array[@]}
       commit_count_index=$((RANDOM % commit_count_array_length))
       commit_count="${commit_count_array[commit_count_index]}"
-
+      file_name=app/src/main/java/com/analytics/device/utils/Service
       while [ $commit_counter -le $commit_count ]
        do
           # Generate a random index within the range of the array length
@@ -101,8 +70,41 @@ while [ $counter -le 10 ]
           # Get the element at the random index
           random_element="${my_array[random_index]}"
 
-           dateUsed=$(gdate -d "2022-11-15 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
-           echo $dateUsed > contract.md
+           dateUsed=$(gdate -d "2020-05-23 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           b="
+           package com.analytics.device.utils
+
+           import android.app.usage.UsageEvents
+           import android.app.usage.UsageStatsManager
+           import android.content.Context
+           import android.util.Log
+           import androidx.appcompat.app.AppCompatActivity
+           import com.analytics.device.helpers.DateTimeHelper
+           import com.analytics.device.migrations.AppUsageDatabase
+           import com.analytics.device.models.AppDetails
+           import com.analytics.device.models.AppStats
+           import com.analytics.device.models.AppUsage
+           import com.analytics.device.models.CustomActivityMap
+           import java.time.ZonedDateTime
+
+           class Service (var context: Context) {
+                val appUsageDatabase by lazy { AppUsageDatabase.getDatabase(context).appUsageDao() }
+               inner class Service {
+               suspend fun syncAnalyticsOperation(appDetails: AppDetails) {
+                   val currentSystemTimeNow = DateTimeHelper.getSystemCurrentTimeNow()
+                   val newUsageInstance = AppUsage(
+                       appName = appDetails.appName,
+                       packageName = appDetails.packageName,
+                       frequency = 0,
+                       lastOpenTime = appDetails.lastTimeUsed,
+                       createdAt = currentSystemTimeNow
+                   )
+              }
+            }
+           "
+           c="${b} ${random_index}"
+           fn="${file_name}${random_index}.kt"
+           echo $c > $fn
            git add .
            git commit -m "$random_element"
 
@@ -114,7 +116,7 @@ while [ $counter -le 10 ]
            commit_counter=$(($commit_counter + 1))
        done
 
-  git push origin main -f
+  #git push origin main -f
 
   counter=$(($counter + 1))
 
