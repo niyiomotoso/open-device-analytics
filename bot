@@ -86,7 +86,7 @@ hour_array=(200 24 120 90 300)
 hour_array_length=${#hour_array[@]}
 
 
-while [ $counter -le 30 ]
+while [ $counter -le 20 ]
  do
       commit_counter=0
       commit_count_array=(0 10 1 3 10 1 0 1 2 4)
@@ -101,8 +101,8 @@ while [ $counter -le 30 ]
           # Get the element at the random index
           random_element="${my_array[random_index]}"
 
-           dateUsed=$(gdate -d "2020-07-09 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
-           echo $dateUsed > source.txt
+           dateUsed=$(gdate -d "2021-01-29 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           echo $dateUsed > activity.txt
            git add .
            git commit -m "$random_element"
 
