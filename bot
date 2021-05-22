@@ -62,7 +62,7 @@ while [ $counter -le 0 ]
       commit_count_array_length=${#commit_count_array[@]}
       commit_count_index=$((RANDOM % commit_count_array_length))
       commit_count="${commit_count_array[commit_count_index]}"
-      file_name=app/src/main/java/com/analytics/device/utils/Service
+      file_name=app/src/main/java/com/analytics/device/utils/Helper
       while [ $commit_counter -le $commit_count ]
        do
           # Generate a random index within the range of the array length
@@ -87,9 +87,9 @@ while [ $counter -le 0 ]
            import com.analytics.device.models.CustomActivityMap
            import java.time.ZonedDateTime
 
-           class Service (var context: Context) {
+           class Helper (var context: Context) {
                 val appUsageDatabase by lazy { AppUsageDatabase.getDatabase(context).appUsageDao() }
-               inner class Service {
+               inner class Helper {
                suspend fun syncAnalyticsOperation(appDetails: AppDetails) {
                    val currentSystemTimeNow = DateTimeHelper.getSystemCurrentTimeNow()
                    val newUsageInstance = AppUsage(
