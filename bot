@@ -55,7 +55,7 @@ hour_array=(700 540 200 900 400)
 hour_array_length=${#hour_array[@]}
 
 
-while [ $counter -le 7 ]
+while [ $counter -le 0 ]
  do
       commit_counter=0
       commit_count_array=(0 2 0 3 0 1 0 1 2 4)
@@ -70,7 +70,7 @@ while [ $counter -le 7 ]
           # Get the element at the random index
           random_element="${my_array[random_index]}"
 
-           dateUsed=$(gdate -d "2020-05-23 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           dateUsed=$(gdate -d "2021-05-23 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
            b="
            package com.analytics.device.utils
 
@@ -116,7 +116,7 @@ while [ $counter -le 7 ]
            commit_counter=$(($commit_counter + 1))
        done
 
-  git push origin main -f
+  #git push origin main -f
 
   counter=$(($counter + 1))
 
