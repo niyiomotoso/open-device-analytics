@@ -80,7 +80,7 @@ sc=$[ $RANDOM % 60 + 10 ]
 array_length=${#my_array[@]}
 
 # Define an array of integers
-hour_array=(200 24 120 90 300)
+hour_array=(200 240 1200 900 300)
 
 # Get the length of the array
 hour_array_length=${#hour_array[@]}
@@ -89,7 +89,7 @@ hour_array_length=${#hour_array[@]}
 while [ $counter -le 20 ]
  do
       commit_counter=0
-      commit_count_array=(0 10 1 3 10 1 0 1 2 4)
+      commit_count_array=(0 2 1 3 0 1 0 1 2 4)
       commit_count_array_length=${#commit_count_array[@]}
       commit_count_index=$((RANDOM % commit_count_array_length))
       commit_count="${commit_count_array[commit_count_index]}"
@@ -101,8 +101,8 @@ while [ $counter -le 20 ]
           # Get the element at the random index
           random_element="${my_array[random_index]}"
 
-           dateUsed=$(gdate -d "2021-01-29 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
-           echo $dateUsed > activity.txt
+           dateUsed=$(gdate -d "2021-07-15 $random_hour_element hours $mn minutes $sc seconds" "+%a %b %d %H:%M:%S %Y %z")
+           echo $dateUsed > service.md
            git add .
            git commit -m "$random_element"
 
