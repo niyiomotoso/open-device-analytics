@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Device Analytics</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="time_range">
+        <item>today</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>1 day</item>
+        <item>3 days</item>
+        <item>5 days</item>
+        <item>1 week</item>
+        <item>2 weeks</item>
+        <item>3 weeks</item>
+        <item>1 month</item>
+        <item>3 months</item>
+    </string-array>
+
+    <string-array name="stats_type">
+        <item>Total Time Used</item>
+        <item>App Usage Count</item>
+        <item>Last Time Opened</item>
+    </string-array>
+    <string name="privacy_policy"><a href="https://niyiomotoso.github.io/pages/privacy.html">Privacy policy</a></string>
+    <!-- link for practice textview-->
+    <string name="terms_of_service"><a href="https://niyiomotoso.github.io/pages/terms.html">Terms of service</a></string>
+    <string name="app">App</string>
+    <string name="_0h">0h</string>
+    <string name="_30">30%</string>
+    <string name="todo">TODO</string>
+    <string name="enable_usage_stats_permission">Enable Usage Stats Permission</string>
+    <string name="show_my_apps_usage">Show My Apps Usage</string>
+    <string name="your_apps_usage_for_last_24_hours">Your Apps Usage For Last 24 Hours</string>
+    <string name="permission_description">In order to allow this application to collect your apps usage information.\n\n You need to allow "Package Usage Stats" permission from the Settings application.</string>
+</resources>
