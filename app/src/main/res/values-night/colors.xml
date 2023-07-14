@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_color">#FFFFFFFF</color>
+    <color name="header_text_color">#FFFFFFFF</color>
+    <color name="mainPageColor">#1F1949</color>
+    <color name="main_card_bg">#000000</color>
+    <color name="scroll_color">#F3F3F3</color>
+    <color name="list_card_bg">#000000</color>
+    <color name="usage_header_bg_1">#000000</color>
+    <color name="usage_header_bg_2">#000000</color>
+</resources>
