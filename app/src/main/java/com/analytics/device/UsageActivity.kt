@@ -49,7 +49,7 @@ open class UsageActivity: AppCompatActivity()  {
         appRecyclerView = findViewById(R.id.apps_list)
         filters = findViewById(R.id.filters)
         currentlySelectedStatType = StatsTypeMap().TOTAL_TIME_USED
-        currentlySelectedTimeRange = DateTimeHelper.getHourFromBeginningOfDay()
+        currentlySelectedTimeRange = DateTimeHelper.getMinutesFromBeginningOfDay()
         currentlySelectedTimeRangeString = "today"
         arrowBackIv = findViewById(R.id.arrow_back)
 

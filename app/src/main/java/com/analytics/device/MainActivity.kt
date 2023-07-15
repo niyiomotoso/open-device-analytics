@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun loadGeneralAppStats() {
         appPackageStats = HashMap()
-        appPackageStats = UsageUtils(baseContext).Usage().loadGeneralAppEvents(DateTimeHelper.getHourFromBeginningOfDay())
+        appPackageStats = UsageUtils(baseContext).Usage().loadGeneralAppEvents(DateTimeHelper.getMinutesFromBeginningOfDay())
         computeTopAppUsages(appPackageStats)
         getTodayAppUsageCount(appPackageStats)
 

@@ -57,13 +57,13 @@ class UsageUtils (var context: Context) {
         /**
          * load the usage stats within a time range
          */
-        fun loadGeneralAppEvents(timeInHours: Int): HashMap<String, AppStats> {
+        fun loadGeneralAppEvents(timeInMinutes: Int): HashMap<String, AppStats> {
             // get all non-system apps
             val nonSystemApps = GeneralUtils().Utils().getNonSystemAppsList(context)
 
             val usm = context.getSystemService(AppCompatActivity.USAGE_STATS_SERVICE) as UsageStatsManager
-            val milliSecondMultiplier: Long = 3600000
-            val start: Long = (ZonedDateTime.now().toInstant().toEpochMilli() - (milliSecondMultiplier * timeInHours))
+            val milliSecondMultiplier: Long = 60000
+            val start: Long = (ZonedDateTime.now().toInstant().toEpochMilli() - (milliSecondMultiplier * timeInMinutes))
             val usageEvents = usm.queryEvents(start, System.currentTimeMillis())
             // reset appPackage Map
             val appPackageMap: HashMap<String, ArrayList<UsageEvents.Event>> = HashMap()

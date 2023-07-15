@@ -152,10 +152,15 @@ class DateTimeHelper {
             return timeNow.toString()
         }
 
-        fun getHourFromBeginningOfDay(): Int
+        fun getMinutesFromBeginningOfDay(): Int
         {
             val timeNow = LocalDateTime.now()
-            return timeNow.hour
+            return if (timeNow.hour == 0) {
+                timeNow.minute
+            } else {
+
+                (timeNow.hour * 60) + timeNow.minute
+            }
         }
 
         fun isDateTimeMillisWithinToday(dateTime: Long): Boolean
