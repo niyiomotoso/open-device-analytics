@@ -1,10 +1,10 @@
 # Summary
-Monitor device screen time, app usages, memory utilisation - all in one interface
+Monitor device screen time, app usages, memory utilisation - all in one interface.
+
+Take control of your device usage and gain valuable insights into your digital habits with Device Analytics. Our powerful reporting tool offers a comprehensive range of metrics to help you understand and optimise your smartphone experience.
 
 # Google Play Store Link
 https://play.google.com/store/apps/details?id=com.analytics.device
-
-Take control of your device usage and gain valuable insights into your digital habits with Device Analytics. Our powerful reporting tool offers a comprehensive range of metrics to help you understand and optimise your smartphone experience.
 
 # screen time tracking
 Curious about how much time you spend on your device? Device Analytics accurately tracks and displays your screen time, providing a clear overview of your usage patterns. Stay informed and make informed decisions about your digital wellbeing.
